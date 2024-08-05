@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ./services/api
+diesel --database-url "postgres://postgres:postgres@0.0.0.0:5432/db" $@
+cd ../..
