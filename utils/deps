@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+sudo chown $USER:$USER -R .
+
+docker compose run --rm --entrypoint sh frontend  -c "yarn cache clean"
+
+docker compose run --rm --entrypoint sh frontend  -c "rm /package.json && yarn install"
+
+sudo chown $USER:$USER -R .

@@ -6,10 +6,11 @@
 
 ## Setup
 1. `docker compose build` 
+2. `./utils/deps`
 
 ## Run
 1. `docker compose up`
-2. `api` is running on `localhost:8000`
+2. `api` is running on `localhost:8000` and `web` is running on `localhost:5173`
 
 ## run diesel
 1. make sure the db is running (docker compose up postgres)

@@ -18,6 +18,20 @@ services:
         - "8000:8000"
     env_file:
       - envs/api/.env.dev
+  frontend:
+    depends_on:
+      - api
+    build:
+        target: dev
+        context: ./
+        dockerfile: ./compose/frontend/Dockerfile
+    image: frontend
+    volumes:
+        - ./services/frontend:/app
+    ports:
+        - "5173:5173"
+    env_file:
+        - envs/frontend/.env.dev
   postgres:
     image: postgres:16
     env_file:
